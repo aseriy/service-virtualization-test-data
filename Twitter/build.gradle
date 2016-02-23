@@ -1,0 +1,38 @@
+plugins {
+    id "groovy"
+    id "com.github.samueltbrown.cucumber" version "0.9"
+} 
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'org.twitter4j:twitter4j-core:4.0.4'
+	compile 'org.slf4j:slf4j-simple:1.2'
+	compile "org.codehaus.groovy:groovy-all:2.4.5"
+	testCompile "junit:junit:4.12"
+	testCompile "info.cukes:cucumber-groovy:1.2.4"
+	testCompile "info.cukes:cucumber-junit:1.2.4"
+}
+
+cucumber {
+	formats = [
+		'pretty', // prints nice format out to the console
+		'html:build/reports/cucumber', // html
+		'junit:build/cucumber.xml' // junit format for integration with CI tool etc
+	]
+	// src/cucumber/resources is included automatically
+	glueDirs = [
+		'src/main/groovy',
+		'src/test/groovy',
+		"src/test/cucumber/steps",
+		"src/test/cucumber/support"
+	]
+	featureDirs = [
+		"src/test/cucumber"
+	]
+	tags = ['@discovery']
+	strict=true
+}
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="3.434136">
+<testcase classname="Twitter API" name="API calls discovery" time="3.434136">
+<failure message="401:Authentication credentials (https://dev.twitter.com/pages/auth) were missing or incorrect. Ensure that you have set valid consumer key/secret, access token/secret, and the system clock is in sync.&#10;message - Invalid or expired token.&#10;code - 89&#10;&#10;Relevant discussions can be found on the Internet at:&#10;&#9;http://www.google.co.jp/search?q=18982322 or&#10;&#9;http://www.google.co.jp/search?q=e53d7ce2&#10;TwitterException{exceptionCode=[18982322-e53d7ce2], statusCode=401, message=Invalid or expired token., code=89, retryAfter=-1, rateLimitStatus=null, version=4.0.4}&#10;&#9;at twitter4j.HttpClientImpl.handleRequest(HttpClientImpl.java:164)&#10;&#9;at twitter4j.HttpClientBase.request(HttpClientBase.java:57)&#10;&#9;at twitter4j.HttpClientBase.post(HttpClientBase.java:86)&#10;&#9;at twitter4j.TwitterImpl.post(TwitterImpl.java:1822)&#10;&#9;at twitter4j.TwitterImpl.destroyFriendship(TwitterImpl.java:447)&#10;&#9;at twitter4j.api.FriendsFollowersResources$destroyFriendship$2.call(Unknown Source)&#10;&#9;at twitter4j.api.FriendsFollowersResources$destroyFriendship$0.call(Unknown Source)&#10;&#9;at TwitterWrapper.destroyFriendship(TwitterWrapper.groovy:72)&#10;&#9;at TwitterWrapper$destroyFriendship$5.call(Unknown Source)&#10;&#9;at twitter-api_steps$_run_closure11.doCall(twitter-api_steps.groovy:81)&#10;&#9;at ✽.And follow and un-follow &quot;AlanSanie&quot;(twitter-api.feature:23)&#10;"><![CDATA[Given Twitter instance......................................................passed
+Given user "AlanSanie"......................................................passed
+When request my credentials.................................................passed
+And request the list of followers...........................................passed
+And examine my friendship with "AlanSanie"..................................passed
+And follow and un-follow "AlanSanie"........................................failed
+
+StackTrace:
+401:Authentication credentials (https://dev.twitter.com/pages/auth) were missing or incorrect. Ensure that you have set valid consumer key/secret, access token/secret, and the system clock is in sync.
+message - Invalid or expired token.
+code - 89
+
+Relevant discussions can be found on the Internet at:
+	http://www.google.co.jp/search?q=18982322 or
+	http://www.google.co.jp/search?q=e53d7ce2
+TwitterException{exceptionCode=[18982322-e53d7ce2], statusCode=401, message=Invalid or expired token., code=89, retryAfter=-1, rateLimitStatus=null, version=4.0.4}
+	at twitter4j.HttpClientImpl.handleRequest(HttpClientImpl.java:164)
+	at twitter4j.HttpClientBase.request(HttpClientBase.java:57)
+	at twitter4j.HttpClientBase.post(HttpClientBase.java:86)
+	at twitter4j.TwitterImpl.post(TwitterImpl.java:1822)
+	at twitter4j.TwitterImpl.destroyFriendship(TwitterImpl.java:447)
+	at twitter4j.api.FriendsFollowersResources$destroyFriendship$2.call(Unknown Source)
+	at twitter4j.api.FriendsFollowersResources$destroyFriendship$0.call(Unknown Source)
+	at TwitterWrapper.destroyFriendship(TwitterWrapper.groovy:72)
+	at TwitterWrapper$destroyFriendship$5.call(Unknown Source)
+	at twitter-api_steps$_run_closure11.doCall(twitter-api_steps.groovy:81)
+	at ✽.And follow and un-follow "AlanSanie"(twitter-api.feature:23)
+]]></failure>
+</testcase>
+</testsuite>
